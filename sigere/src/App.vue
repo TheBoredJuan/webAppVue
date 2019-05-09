@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <Login />
+    <Register />
   </div>
 </template>
 
 <script>
 import Login from './components/login.vue'
+import Register from './components/register.vue'
+import Perfil from './components/perfil.vue'
 
 export default {
   name: 'app',
   components: {
-    Login
+    Register,
+    Login,
+    Perfil
   }
 }
 </script>

@@ -1,47 +1,58 @@
 <template>
-  <div class="login">
+  <div class="register">
     <div class="box1">
-      <img src ="../assets/ingenieriaReq.png" height ="125" width="125" >
+        <a class="backbutton" href="/paginaAnterior"><img src="../assets/back.svg" height ="75" width="75"></a> 
       <b><p class="a">SIGERE</br> Sistema Gestor de Requisitos</p></b>
 
     </div>
     <div v-if="loggingIn" class="container-loading">
-      <img src="/loading.gif" alt="Loading Icon">
+      <img src="/loading.gif" alt="Loading Icon"<>
     </div>
+    <!-- Hola-->
     <p v-if="loginError">{{ loginError }}</p>
     <p v-if="loginSuccessful">Login Successful</p>
     <form @submit.prevent="loginSubmit">
     <div class="box2">
+      <h1 style="margin-bottom:1px"> <font color= "B7B7B7"> Registrarse </font></h1>
+      <input class ="log" type="text" placeholder="Nombre" v-model="name">
+      <input class ="log" type="text" placeholder="Apellido" v-model="apellido">
+      <input class ="log" type="text" placeholder="Usuario" v-model="usuario">
       <input class ="log" type="email" placeholder="E-Mail" v-model="email">
       <input class ="log"type="password" placeholder="Password" v-model="password">
-      <button class ="log" type="submit">Login</button>
+      <h3 style="text-align:left;margin-left:18px;"></br><font color= "B7B7B7">Al continuar acepta los terminos y condiciones</font></h3>
+      <button class ="log" type="submit">Registrarse</button>
      </div> 
     </form>
   </div>
 </template>
 
 <style scoped lang="scss">
+  .backbutton{
+    position:relative;
+    left:25px;
+    top:25px;
+  }
   button.log{
     width: 175px;
     justify-content: center;
     position: relative;
-    top: 50px;
-    border-radius: 5px;
+    border-radius:3px;
+    top: 5px;
   }
   input.log{
     width: 300px;
     justify-content: center;
     position: relative;
-    top :50px;
+    top :25px;
     border-radius: 5px;
   }
-  .login {
+  .register {
     padding: 0.0rem;
     border-spacing: 0;
     margin:-1%;
     border-collapse: collapse;
     width: 1366px;
-    height: 768px;
+    height: 900px;
     overflow: hidden;
     .container-loading {
       position: absolute;
@@ -71,7 +82,6 @@
         padding: .5rem;
         background-color: lightgray;
         border: 1px solid gray;
-        border-radius: 3px;
         cursor: pointer;
         &:hover {
           background-color: lightslategray;
@@ -92,7 +102,7 @@
   }
   .box2{
     width: 350px;
-    height: 248px;
+    height: 475px;
     /*width: 350px;
     height: 248px;*/
     background-color: #555555;
@@ -110,7 +120,7 @@
     font-size: 25px;
     justify-content: center;
     color: #000000;
-    width:1100px;
+    width:1170px;
     text-align: center;
     position:relative;
   }
